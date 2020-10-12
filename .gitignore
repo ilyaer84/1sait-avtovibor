@@ -41,6 +41,7 @@ node_modules/
 *.sqlite
 
 # мои 
+Dano
 dano.*
 config.php
 Dano
