@@ -1,0 +1,119 @@
+<div class="div_block">
+
+    <?php if (isset($info)) { ?>
+    <h1>
+        <?php echo $info; ?> </h1>
+
+    <?php } else { ?>
+
+    <img class="ofon" src="/img/osnov/сhern_bel.jpg" alt="Фон автобобиль">
+    <div class="blockleft">
+        <div class="d_l1">
+            <p style=" text-align-last: left;">Каталог</p>
+            <p style="text-align-last: right;"> Автотоваров </p>
+
+        </div>
+
+        <div class="accordion">
+            <?php
+            $i=0;
+            
+            while ($res = $cat->fetch_assoc()) { 
+                ++$i;              
+
+                if(isset($_GET['c']) and $_GET['c'] == $res['id']) {
+                    $checked='checked';
+                }else{
+                    $checked='';
+                }
+               
+
+            echo '<input type="checkbox" id="hd-'.$i.'" name="checked"  class="hide" '.$checked.'> >
+            <label  for="hd-'.$i.'"> <h4>'.$res['cat'].'</h4> </label>  ';
+        
+          $tmp= $res['id'];
+          $podcat = q(" 
+            SELECT *
+            FROM `podcat`
+            WHERE `id_cat` = ".$tmp."
+            ");
+            echo '<div class="box">';
+            while($res2 = $podcat->fetch_assoc()) {
+            
+             echo '<a href="/catalog?action=write&id='.$res2['id'].'&c='.$res2['id_cat'].'">'.$res2['podcat'].' </a> <br>';
+        
+            }
+            echo '</div> <br>';
+            }
+
+            $cat->close();
+            $podcat->close();		
+            ?>
+
+        </div>
+
+
+    </div>
+
+    <div class=" div_stop ">
+        <h2 class="h2_ds_top ">
+            <?php 
+            
+            echo $res3['title'];
+            
+             ?>
+        </h2>
+    </div>
+
+
+    <div class="block_r">
+
+        <?php
+       
+        $wi=0;
+        $clear = '<div class="clear"></div>';
+	    while ($row = mysqli_fetch_assoc($sql)) { 
+            ++$wi;
+            $count = preg_match_all('#/([\w\d_-]*).{2,5}$#ui',  $row['img'], $matches);   
+                if($wi ==4 || $wi ==7) {
+                    echo  $clear.'
+                    <div class="d_r_1" >
+                        <div class="d_rt">
+                               
+                                <h3>'.$row['title'].'</h3>
+                                <p>'.$row['description'].'</p>
+                            </div>
+                            
+                        <img class="ds_img " src="'.$row['img'].'" alt="'.@$matches[1][0].'">
+                            
+                            <div class="d_s_b ">
+                                <a class="button button-orang " href="/catalog/writen?id='.$row['id'].'">Подробнее</a>
+                            </div>
+</div> '; } else { echo '
+<div class="d_r_1">
+    <div class="d_rt">
+        <h3>'.$row['title'].'</h3>
+        <p>'.$row['description'].'</p>
+    </div>
+        
+    <img class="ds_img " src="'.$row['img'].'" alt="'.@$matches[1][0].'">
+
+    <div class="d_s_b ">
+        <a class="button button-orang " href="/catalog/writen?id='.$row['id'].'">Подробнее</a>
+    </div>
+</div> '; } } $sql->close(); ?>
+
+    </div>
+
+
+</div>
+<div style="z-index: 1; height: 115px;">
+
+    <?php
+                // вывод пагинатора 
+               // include './libs/class_Paginator.php'; // вызов класса бе автолоад
+                 Paginator::showPaginator(); // с автолоад
+                }
+                ?>
+
+</div>

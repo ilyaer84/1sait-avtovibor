@@ -1,0 +1,106 @@
+
+? меню вн главной главнее картинки?
+
+? фон в каталоге выше?
+
+<?php echo $row['teh'] ?>
+
+transform: rotate(90deg)  //  Задаёт угол наклона
+
+=======================
+доработан но надо подкл сертификат
+
+AddDefaultCharset UTF-8
+php_flag display_errors ON
+
+php_value mbstring.internal_encoding UTF-8
+php_flag magic_quotes_gpc off
+php_flag magic_quotes_runtime off
+php_flag register_globals off
+
+
+php_value memory_limit 128M
+php_value upload_max_filesize 50M
+php_value post_max_size 50M
+php_value max_input_time 3000
+
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_URI} !^/forum
+RewriteCond %{REQUEST_URI} !^/ckeditor
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ index.php?route=$1 [L,QSA]
+
+RewriteCond %{SERVER_PORT} !^443$
+RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R,L]
+
+RewriteCond %{HTTP_HOST} ^www\.(.*)$
+RewriteRule ^(.*)$ http://%1/$1 [L,R=301] 
+
+ErrorDocument 404 modules/errors/404.php
+
+=======================
+стандарт
+
+AddDefaultCharset UTF-8
+php_flag display_errors ON
+
+php_value mbstring.internal_encoding UTF-8
+php_flag magic_quotes_gpc off
+php_flag magic_quotes_runtime off
+php_flag register_globals off
+
+
+php_value memory_limit 128M
+php_value upload_max_filesize 50M
+php_value post_max_size 50M
+php_value max_input_time 3000
+
+ErrorDocument 404 modules/errors/404.php
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_URI} !^/forum
+RewriteCond %{REQUEST_URI} !^/ckeditor
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ index.php?route=$1 [L,QSA]
+
+
+
+
+
+
+
+
+
+
+
+css
+____________
+body {
+    font: 16px/1 'Open Sans', sans-serif; 16px/24px - 1 цифра: - размер шрифта; 2 цифра: - высота строки; Arial, Helvetica, sans-serif - указание названия шрифта.
+    background: #ddd;
+}
+____________
+opacity: 0;
+Значение 0 соответствует полной прозрачности элемента, а 1, наоборот — его непрозрачности. 
+*******************************
+
+иконка 
+____________
+Атрибут href задает расположение и имя файла.
+
+Формат рисунка не обязательно должен быть ICO, также допускается использование GIF и PNG. При этом необходимо сменить значение атрибута type на image/gif или image/png, в зависимости от типа изображения.
+
+<head>
+ <link rel="shortcut icon" href="/images/favicon.png" type="image/png">
+</head>
+_____________
+*******************

@@ -1,0 +1,168 @@
+/*
+Коллекция иконочных шрифтов содержит 750+ иконок. Самый простой способ установить коллекцию на свой сайт — использовать иконки как Google Web Fonts. Для этого в разметку страницы включается следующий код:
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+Размер иконок
+
+Размер иконок контролируется с помощью дополнительных классов:
+
+.material-icons.md-18 {font-size: 18px;}  для <i class="material-icons md-18"></i> 
+.material-icons.md-24 {font-size: 24px;}  для <i class="material-icons md-24"></i> 
+.material-icons.md-36 {font-size: 36px;}  для <i class="material-icons md-36"></i> 
+.material-icons.md-48 {font-size: 48px;}  для <i class="material-icons md-48"></i> 
+
+CSS
+3.2. Цвет иконок
+
+Цвет иконок также задается с помощью дополнительных классов:
+
+.material-icons.md-dark {color: rgba(0, 0, 0, 0.54);}  <i class="material-icons md-dark"></i> 
+.material-icons.md-light {color: rgba(255, 255, 255, 1);}<i class="material-icons md-light"></i> 
+.material-icons.md-dark.md-inactive {color: rgba(0, 0, 0, 0.26);}  <i class="material-icons md-dark md-inactive"></i> 
+.material-icons.md-light.md-inactive {color: rgba(255, 255, 255, 0.3);}  <i class="material-icons md-light md-inactive">face</i> 
+
+CSS
+
+Чтобы установить пользовательский цвет, нужно добавить класс, определяющий цвет иконки, например:
+
+.material-icons.indigo {color: #1A237E;}  <i class="material-icons indigo"></i> 
+
+
+Для корректного отображения шрифта в браузерах элементу, который будет использовать иконочный шрифт, 
+задается класс material-icons:
+*/
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    /* Предпочтительный размер иконок */
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    /* Поддержка всеми WebKit браузерами */
+    text-rendering: optimizeLegibility;
+    /* Поддержка Safari и Chrome */
+    -moz-osx-font-smoothing: grayscale;
+    /* Поддержка Firefox. */
+    font-feature-settings: 'liga';
+    /* Поддержка IE. */
+}
+
+.nav {
+    position: fixed;
+    display: block;
+    width: 500px;
+    height: 16%;
+    top: 25%;
+    margin-left: 0px;
+    transform: translateZ(0);
+    z-index: 1;
+    /*
+    
+    left: 50%;
+    margin-top: -40px;
+    margin-left: -250px;
+    background: #fff;
+    */
+}
+
+.nav:hover .link {
+  /*  width: 5%;*/
+}
+
+.nav A {
+    color: #ff3d00;
+    /* Цвет ссылок */
+}
+
+.nav A:active {
+    color: #ffff00;
+    /* Цвет активных ссылок */
+}
+
+.nav A:visited {
+    /* Цвет посещенных ссылок */
+}
+
+.nav .link {
+    position: relative;
+    width: 12%;
+    height: 60%;
+    color: #ff3d00;
+    transition: .5s width;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.7);
+    /*
+float: left;
+border-right: 1px solid #ddd;
+    */
+}
+
+.nav .link:last-child {
+    border-right: 0;
+}
+
+.nav .link:hover {
+    width: 70%;
+    color: #ff3d00;
+}
+
+.nav .link .small {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 67px;
+    line-height: 55px;
+    text-align: center;
+    font-family: fontawesome;
+    font-size: 22px;
+}
+
+.nav .link .full {
+    position: absolute;
+    top: 20%;
+    left: 90px;
+    text-transform: uppercase;
+}
+
+.nav .link .full .f1,
+.nav .link .full .f2 {
+    font-size: 1em;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.nav .link .full .f2 {
+    font-size: 0.6em;
+}
+
+.nav .link .prev {
+    position: absolute;
+    top: 0;
+    font-family: fontawesome;
+    font-size: 12px;
+    line-height: 55px;
+    transition: .5s opacity;
+    opacity: 0;
+    /* left: 7px; */
+}
+
+.nav .link:hover .prev {
+    opacity: 0;
+}
+
+.nav:hover .prev {
+    opacity: 1;
+}

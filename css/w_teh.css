@@ -1,0 +1,47 @@
+    .product-specs .product-specs-list {
+        padding: 20px;
+    }
+    
+    .product-specs .property-title {
+        color: #999;
+        font-size: 14px;
+    }
+    
+    .product-specs .property-desc {
+        cursor: pointer;
+        display: inline-block;
+        max-width: 300px;
+        font-size: 14px;
+        color: #151515;
+        vertical-align: bottom;
+    }
+    
+    .product-specs .product-specs-list li {
+        position: relative;
+        width: 50%;
+        float: left;
+        line-height: 28px;
+        list-style: none;
+        margin-left: 0;
+    }
+    
+    .product-specs ul {
+        text-align: justify;
+    }
+    
+    .util-clearfix::after {
+        visibility: hidden;
+        display: block;
+        height: 0;
+        font-size: 0;
+        content: "\0020";
+        clear: both;
+    }
+    
+    .w_b {
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: justify;
+        text-indent: 20px;
+            padding-bottom: 10%;
+    }

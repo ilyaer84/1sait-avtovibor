@@ -1,0 +1,65 @@
+<div class="div_block">
+
+    <?php if (isset($info)) { ?>
+    <h1>
+        <?php echo $info; ?> </h1>
+
+    <?php } else {
+
+	while ($row = mysqli_fetch_assoc($tovar)) { 
+		$count = preg_match_all('#([/\w\d_-]*.{2,5});#ui',  $row['dop_img'], $matches);
+        $count2 = preg_match_all('#/([\w\d_-]*).{2,5}$#ui',  $row['img'], $matches2); 
+        
+         
+        ?>
+    <div class="b_w1">
+        <div>
+            <img class="b_w_img" src="<?php echo $row['img']; ?>" alt="<?php echo @$matches2[1][0]  ?>">
+        </div>
+
+        <div class="b_w2">
+
+            <?php 
+			for($i = 0; $i<$count; ++$i) {	
+                $count3 = preg_match_all('#/([\w\d_-]*).{2,5}$#ui', $matches[1][$i], $matches3);               		
+				echo '<img class=" b_w_bot_img " src="'.@$matches[1][$i].'" alt=" '.@$matches3[1][0].' ">' ;
+			}
+				   ?>
+        </div>
+
+    </div>
+
+    <div class="b_w1 ">
+        <div>
+            <h2><b>  <?php echo $row['title']; ?> </b> </h2>
+            <p>Основные характеристики:
+                <?php echo $row['description']; ?> </p>
+            <div class="d_s_b ">
+                <a class="button button-orang " href=" <?php echo $row[ 'url_donat'] ?> " target="_blank">Купить 
+
+                   <p> <span> Узнать цену </span> </p>
+                </a>
+            </div>
+
+        </div>
+        <div>
+            <hr>
+            <p> Храктеристики: </p>
+            <?php echo $row['teh'] ?>
+
+        </div>
+    </div>
+
+
+
+
+</div>
+
+<div class="w_b">
+    <?php echo $row['text']; ?>
+</div>
+
+<?php } 
+$tovar->close();
+}
+?>

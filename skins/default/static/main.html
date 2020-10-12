@@ -1,0 +1,137 @@
+<div>
+
+    <p class="p_pop">Здравствуйте! Рады видеть ВАС, в нашем интернет - каталоге. Здесь мы пострались собрать самые актуаьные, интересные и достойные автотовары.</p>
+    <p class="p_pop"> В каталоге авто - товаров представлены популярные категории: </p>
+    <h1>
+        <?php 
+        while ($res = $cat->fetch_assoc()) { 
+        echo $res['cat'].', ' ; }
+         ?>
+    </h1>
+</div>
+<div class="div_main1">
+    <img src="/img/osnov/chevrolet-corvette-z06-koleso.jpg" alt="Автомобиль мечты" style="width: 100%;">
+</div>
+
+<?php
+$cat = q(" 
+SELECT *
+FROM `cat`
+");
+while ($res = $cat->fetch_assoc()) { ?>
+    <div style="max-width: 1200px; margin: 0px auto;">
+        Наиболее популярный товар из категории
+        <b>
+            <?php echo $res['cat'].' : ' ; ?>
+        </b>
+        <p class="p_pop">
+            <?php echo $res['pop']; ?> </p>
+    </div>
+
+    <div class="div_block">
+
+        <div class="blockleft">
+            <a class="category-banner" href="/catalog&c=<?php echo $res['id']; ?>">
+                <img src="<?php echo $res['img']; ?>" alt=" <?php
+                $count = preg_match_all('#/([\w\d_-]*).{2,5}$#ui',  $row['img'], $matches); 
+                echo @$matches[1][0] ;
+                ?>
+                ">
+                <h3 class="banner-label">Заказать <br> <span class="small"><?php echo $res['cat']; ?> </span></h3>
+                <span class="action-link">SEE ALL PRODUCTS</span>
+            </a>
+        </div>
+
+        <div class=" div_stop ">
+            <h2 class="h2_ds_top ">
+                <?php 
+                                
+                                echo $res['title'];
+                                
+                                ?>
+            </h2>
+        </div>
+
+
+
+        <div class="block_r">
+            <?php
+       
+            $wi=0;
+            $clear = '<div class="clear"></div>';
+
+            $sql = q("
+                SELECT * 
+                FROM `podcat`
+                WHERE `id_cat` = ".$res['id']."
+                               
+                    ");
+                    $array = [];
+
+             while ($res2 = mysqli_fetch_assoc($sql)) { 
+                
+                 $array[] = (int)$res2['id'];
+                    }
+                    $sql->close();
+                  
+                        foreach($array as $k=>$v) {
+                            $array[$k] = (int)$v;
+                        }
+            $array = implode(',',$array);
+
+            $sql2 = q("
+                SELECT * 
+                FROM `tovar`
+                WHERE `id_podcat` IN (".$array.") and `pop` = 1 
+                LIMIT 3              
+                ");
+
+            while ($res3 = mysqli_fetch_assoc($sql2)) { 
+                $count = preg_match_all('#/([\w\d_-]*).{2,5}$#ui',  $res3['img'], $matches);                           
+
+                ++$wi;               
+                    if($wi ==4 || $wi ==7) {
+                        echo  $clear.'<div class="d_r_1" >
+                                <div class="d_rt">
+                                  
+                                    <h3>'.$res3['title'].'</h3>
+                                    <p>'.$res3['description'].'</p>
+                                </div>
+                        
+                            <img class="ds_img " src="'.$res3['img'].'" alt="'.@$matches[1][0].'">
+                             
+                       
+                <div class="d_s_b ">
+                    <a class="button button-orang " href="/catalog/writen?id='.$res3['id'].'">Подробнее</a>
+                </div>
+        </div> '; 
+    
+    } else { echo '
+        <div class="d_r_1">
+            <div class="d_rt">
+                <h3>'.$res3['title'].'</h3>
+                <p>'.$res3['description'].'</p>
+            </div>
+
+            <img class="ds_img " src="'.$res3['img'].'" alt="'.@$matches[1][0].'">
+
+                <div class="d_s_b ">
+                    <a class="button button-orang " href="/catalog/writen?id='.$res3['id'].'">Подробнее</a>
+                </div>
+        </div> '; } } $sql2->close(); ?>
+
+
+
+        </div>
+
+
+    </div>
+    
+    <?php
+}
+$cat->close();
+?>
+
+<div style="height: 45px">
+    
+</div>

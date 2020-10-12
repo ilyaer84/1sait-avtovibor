@@ -1,0 +1,10 @@
+/uploaded/goods/dop_id2_ekvalaixer.jpg;
+/uploaded/goods/dop_id2_pan.jpg;
+/uploaded/goods/dop_id2_vau.jpg;
+/uploaded/goods/dop_id2_TEYES-SPRO-Lada-VESTA.jpg;
+
+_______________________________________
+
+uploadedgoodsdop_id3_komplekt.jpg;
+uploadedgoodsdop_id3_teyes-lada-granta.jpg;
+uploadedgoodsdop_id3_teyes-cc2-zvuk.jpg;

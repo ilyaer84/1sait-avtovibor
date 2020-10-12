@@ -1,0 +1,499 @@
+@font-face {
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Comic Sans MS'), url('/fonts/awesome-l.woff2') format('woff2'), url('/fonts/awesome-l.woff') format('woff'), url('/fonts/awesome-l.ttf') format('ttf'), url('/fonts/awesome-l.eot') format('eot');
+    unicode-range: U+000-5FF;
+    /*  format(), чтобы указать форматы шрифтов. */
+    /*  помощью поднаборов диапазона Unicode и отдельных файлов для каждого варианта
+     стиля мы можем указать сложное семейство шрифтов, которое быстро загружается
+      и меньше весит. Пользователь будет скачивать только те варианты и поднаборы,
+       которые он увидит на странице, и ничего больше. 
+       */
+}
+
+
+/*
+@font-face {
+    font-family: 'Awesome Font';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Awesome Font'), url('/fonts/awesome-l-700.woff2') format('woff2'), url('/fonts/awesome-l-700.woff') format('woff'), url('/fonts/awesome-l-700.ttf') format('ttf'), url('/fonts/awesome-l-700.eot') format('eot');
+    unicode-range: U+000-5FF;
+}
+    /* Latin glyphs */
+
+html {
+    font-size: calc(0.6em + 0.6vw)
+}
+
+body {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+    height: -webkit-fill-available;
+    background: #FFFFFF;
+    font-family: Comic Sans MS;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* header */
+
+header {
+    padding: 10px;
+    text-align: left;
+    position: relative;
+    background-color: #000000;
+}
+
+
+/* Welcome to our online store! */
+
+.head_text {
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height */
+    color: #A41706;
+    padding-bottom: 1px;
+}
+
+
+/* index.html */
+
+.ul_nav {
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    visibility: visible;
+}
+
+.li_nav {
+    font-size: 20px;
+    display: inline;
+    padding: 10px;
+}
+
+
+/* *** */
+
+#content {
+    flex: 1 0 auto;
+}
+
+
+/*  PAGE MAIN  */
+
+
+/* .div_main1*/
+
+.div_main1 {
+    overflow: hidden;
+    width: 100%;
+}
+
+
+/* columns */
+
+.columns {
+    max-width: 1800px;
+}
+
+.p_pop {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+
+/* div_block */
+
+.div_block {
+    display: flex;
+    position: relative;
+    max-width: 1200px;
+    /*height: 715px;    
+    */
+    margin: 1.1% auto;
+    
+}
+
+.ofon {
+    position: fixed;
+    width: 100%;
+    top: 30%;
+    border-radius: 200px;
+    z-index: -10;
+    max-width: 1200px;
+    margin: 0px auto;
+    opacity: 0.6;
+}
+
+.d_l1 {
+    margin-top: 5%;
+}
+
+
+/* div_baner */
+
+.category-banner {
+    position: static;
+    overflow: visible;
+    margin-top: 0;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    /* background-color: #011327;*/
+    color: #fff;
+}
+
+.category-banner img {
+    min-height: 557px;
+    width: 100%;
+}
+
+.banner-label {
+    font-size: 1em;
+    position: absolute;
+    top: 6.5%;
+    left: -43px;
+    margin: 0;
+    padding: 14px 20px 14px 70px;
+    line-height: 1;
+    color: #fff;
+    background-color: #ff3d00;
+    transition: .3s left ease;
+}
+
+.small {
+    font-size: 61.55%;
+    font-weight: inherit;
+    color: inherit;
+}
+
+.action-link {
+    bottom: 5%;
+    display: inline-block;
+    position: absolute;
+    font-size: 1vw;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    right: 5%;
+}
+
+
+/* div_stop */
+
+.div_stop {
+    position: absolute;
+    padding-left: 36%;
+}
+
+
+/* Автозвук Мультимедиа / 2 DIN автомагнитола, Колонки, Усилитель */
+
+.h2_ds_top {
+    line-height: 20px;
+    text-align: center;
+    color: #000000;
+}
+
+
+/* block_r */
+
+.block_r {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding-top: 5%;
+    height: 542px;
+}
+
+
+/* d_r_1 */
+
+.d_r_1 {
+    width: 30%;
+    height: 100%;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    float: left;
+    margin: 15px 5px;
+    font-size: 0.9em;
+}
+
+.d_r_1:hover {
+    /* margin: -1% 5px;*/
+    color: #F93809;
+}
+
+.d_rt {
+    height: 185px;
+}
+
+.d_s_img {
+    width: 193px;
+    height: 354px;
+}
+
+.br_i {
+    height: 100%;
+}
+
+
+/* image v sound*/
+
+.ds_img {
+    width: 80%;
+    height: 50%;
+}
+
+.d_s_b {
+    height: 100px;
+    /*
+    padding-top: 10%;
+    width: 20%;
+    padding-left: 18%;
+    */
+}
+
+
+/* кнопка подробнее */
+
+.button {
+    color: black;
+    cursor: pointer;
+    position: relative;
+    border-radius: 14px;
+    text-decoration: none;
+    font-size: 2vw;
+}
+
+.button-orang {
+    background: #ff3d00;
+    border-radius: 14px;
+}
+
+.button:hover {
+    background-color: rgb(207, 206, 206);
+    text-decoration: underline;
+}
+
+
+/* footer */
+
+footer {
+    position: fixed;
+    bottom: 0;
+    flex: 0 0 auto;
+    text-align: center;
+    color: ivory;
+    height: 55px;
+    width: 100%;
+    background: #000000;
+    z-index: 10;
+}
+
+.p_foot {
+    padding: 25px;
+}
+
+
+/* левая сторона */
+
+.blockleft {
+    width: 40%;
+    font-size: 24px;
+    line-height: 33px;
+    color: #000000;
+    margin-left: 10%;
+    z-index: 5;
+}
+
+.accordion {
+    position: relative;
+    z-index: 1000;
+    text-align: left;
+    z-index: 1;
+}
+
+
+/* скрываем чекбоксы и блоки с содержанием */
+
+.hide,
+.hide+label~div {
+    display: none;
+}
+
+
+/* вид текста label */
+
+.hide+label,
+.hide:checked+label {
+    color: rgb(0, 0, 0);
+    position: absolute;
+    width: 97%;
+    /* orang */
+    background: #F93809;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+
+/* вид текста label при активном переключателе */
+
+.hide:checked+label {
+    color: rgb(255, 255, 255);
+    border-bottom: 0;
+}
+
+
+/* когда чекбокс активен показываем блоки с содержанием  */
+
+.hide:checked+label+div {
+    display: block;
+    /* background: #efefef;*/
+    -moz-box-shadow: inset 3px 3px 10px #7d8e8f;
+    -webkit-box-shadow: inset 3px 3px 10px #7d8e8f;
+    box-shadow: inset 3px 3px 10px #7d8e8f;
+    padding: 37px;
+}
+
+.box a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.box a:hover {
+    color: #F93809;
+    text-decoration: underline;
+}
+
+ul {
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    visibility: visible;
+}
+
+li {
+    font-size: 30px;
+    display: inline;
+    padding: 1%;
+}
+
+.clear {
+    clear: both;
+}
+
+
+/* writen */
+
+.b_w1 {
+    width: 49%;
+    border: 1px solid #7E7E7E;
+    box-sizing: border-box;
+    text-align: center
+}
+
+.b_w_img {
+    width: 80%;
+    padding: 2% 11%;
+    border: dashed;
+}
+
+.b_w_bot_img {
+    width: 140px;
+    height: 129px;
+    padding-left: 1%;
+}
+
+.b_wr1 {
+    height: 279px;
+}
+
+.b_wr2 {
+    display: table-cell;
+    text-align: left;
+    padding: 5%;
+}
+
+/******* Модальное окно *******/
+.modalDialog {
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	display: none; 
+	/*
+	pointer-events: none; /* позволяет контролировать события, при которых элемент может стать объектом события мыши.*/
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;	
+}
+
+/*
+.modalDialog:target {
+	display: block;
+	pointer-events: auto;
+}
+*/
+.modalDialog > div {
+	width: 400px;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: #fff;
+	background: -moz-linear-gradient(#fff, #999);
+	background: -webkit-linear-gradient(#fff, #999);
+	background: -o-linear-gradient(#fff, #999);
+}
+
+.close {
+	background: #606061;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover { background: #00d9ff; }
+
+
+/******* end Модальное окно *******/
+
+
+
+
